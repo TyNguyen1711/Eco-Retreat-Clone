@@ -41,9 +41,8 @@ export default function UserGuide({
         </div>
       </div>
 
-      <p className="text-white text-sm md:text-xl px-10 md:px-16 text-center">
-        Kéo sang trái hoặc phải để trải nghiệm
-        <br className="md:hidden" /> toàn cảnh dự án
+      <p className="text-white text-sm md:text-xl px-6 md:px-16 text-center">
+        Kéo sang trái hoặc phải để trải nghiệm toàn cảnh dự án
       </p>
 
       <button
