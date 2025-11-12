@@ -282,7 +282,7 @@ export default function NavigationBar({
                 href={item.href}
                 onClick={() => setActiveTab(item.id)}
                 className={`
-                  flex flex-1 items-center gap-2 py-4 md:py-4 rounded-2xl text-sm font-semibold
+                  flex flex-1 items-center gap-1 md:gap-2 py-4 md:py-4 rounded-2xl text-sm font-semibold
                   transition-all duration-300 whitespace-nowrap justify-center
                   ${
                     activeTab === item.id
