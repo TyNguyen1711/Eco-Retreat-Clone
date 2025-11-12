@@ -15,12 +15,14 @@ const PanoramaViewer = () => {
   useEffect(() => {
     const preloadImages = async () => {
       const promises = [];
+      let loadedCount = 0;
 
       for (let i = 1; i <= totalFrames; i++) {
         const promise = new Promise<HTMLImageElement>((resolve, reject) => {
           const preload = new Image();
           preload.onload = () => {
-            setLoadProgress(Math.round((i / totalFrames) * 100));
+            loadedCount++;
+            setLoadProgress(Math.round((loadedCount / totalFrames) * 100));
             resolve(preload);
           };
           preload.onerror = reject;

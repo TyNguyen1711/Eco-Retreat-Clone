@@ -13,7 +13,7 @@ export default function LoadingPage() {
           className="object-cover"
           priority
         />
-        <div className="bg-[radial-gradient(circle,_rgba(96,161,21,0.5)_0%,_rgba(6,24,0,0.5)_0%)] w-full h-full absolute backdrop-blur-sm" />
+        <div className="bg-[radial-gradient(circle,rgba(96,161,21,0.5)_0%,rgba(6,24,0,0.5)_0%)] w-full h-full absolute backdrop-blur-sm" />
       </div>
       <IntroLoading />
     </section>

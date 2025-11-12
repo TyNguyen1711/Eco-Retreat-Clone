@@ -13,7 +13,6 @@
   --color-primary: #5fcd6f;
   --color-secondary: #60A115;
   --animate-spin-slow: spin 3s linear infinite;
-
 }
 
 @media (prefers-color-scheme: dark) {
