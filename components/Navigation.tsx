@@ -269,7 +269,7 @@ export default function NavigationBar({
               src={Logo}
               alt="LOGO"
               width={160}
-              height={40}
+              height={60}
               className="w-[60px] xs:w-[80px] sm:w-[100px] md:w-[160px] h-auto"
             />
           </button>
@@ -286,13 +286,13 @@ export default function NavigationBar({
                   transition-all duration-300 whitespace-nowrap justify-center
                   ${
                     activeTab === item.id
-                      ? "bg-white text-primary shadow-[0_12px_30px_rgba(255,255,255,0.8)] px-4 lg:px-0"
+                      ? "bg-white text-primary shadow-[0_12px_30px_rgba(255,255,255,0.8)] px-1 lg:px-0"
                       : "text-white hover:bg-white/20"
                   }
                 `}
               >
                 <span
-                  className={`flex items-center justify-center transition-all flex-shrink-0`}
+                  className={`flex items-center justify-center transition-all`}
                 >
                   {item.icon}
                 </span>
