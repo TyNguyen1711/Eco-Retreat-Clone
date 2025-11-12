@@ -1,32 +1,7 @@
-"use client";
 import Image from "next/image";
 import Logo1 from "../assets/logo/logo1.png";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
 
-export default function Loading() {
-  const router = useRouter();
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleStart = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    router.push("/overview");
-  };
-
-  useEffect(() => {
-    timeoutRef.current = setTimeout(() => {
-      router.push("/overview");
-    }, 5000);
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [router]);
-
+const Loading = () => {
   return (
     <>
       <div className="relative w-auto h-auto flex justify-center items-center flex-col">
@@ -63,15 +38,7 @@ export default function Loading() {
           </div>
         </div>
       </div>
-
-      <button
-        onClick={handleStart}
-        className="w-max px-16 md:px-20 p-3 md:py-5 cursor-pointer z-10 bg-[#5fcd6f] rounded-2xl border-[#017111] border-2 hover:bg-white hover:border-white drop-shadow-lg drop-shadow-white/0 hover:drop-shadow-white transition-all duration-300 overflow-hidden group"
-      >
-        <span className="text-white group-hover:text-primary font-medium text-sm md:text-base uppercase w-full">
-          BẮT ĐẦU
-        </span>
-      </button>
     </>
   );
-}
+};
+export default Loading;

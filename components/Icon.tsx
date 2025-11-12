@@ -118,7 +118,6 @@ export const BookIcon: React.FC<IconProps> = ({
   </svg>
 );
 
-// Object để dễ dàng truy cập icon theo key
 export const Icons = {
   globe: GlobeIcon,
   location: LocationIcon,
@@ -128,5 +127,4 @@ export const Icons = {
   book: BookIcon,
 };
 
-// Type cho icon keys
 export type IconName = keyof typeof Icons;

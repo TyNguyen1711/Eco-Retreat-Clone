@@ -1,6 +1,7 @@
 import Image from "next/image";
 import bgLoading from "../assets/images/bgLoading.jpg";
-import Loading from "@/components/Loading";
+
+import IntroLoading from "@/components/IntroLoading";
 export default function LoadingPage() {
   return (
     <section className="relative h-screen w-full flex flex-col justify-center items-center gap-5 md:gap-10">
@@ -14,7 +15,7 @@ export default function LoadingPage() {
         />
         <div className="bg-[radial-gradient(circle,_rgba(96,161,21,0.5)_0%,_rgba(6,24,0,0.5)_0%)] w-full h-full absolute backdrop-blur-sm" />
       </div>
-      <Loading />
+      <IntroLoading />
     </section>
   );
 }
