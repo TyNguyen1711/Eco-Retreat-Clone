@@ -3,31 +3,71 @@ import { useEffect, useRef, useState } from "react";
 import bgLoading from "../assets/images/bgLoading.jpg";
 import { default as NextImage } from "next/image";
 import DataLoading from "./DataLoading";
-
+import firstFrame from "../assets/images/rotation/1.jpg";
 const PanoramaViewer = () => {
+  // const imgRef = useRef<HTMLImageElement>(null);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [loadProgress, setLoadProgress] = useState(0);
+  // const totalFrames = 120;
+  // const path = "/images/rotation/";
+  // const imagesCache = useRef<HTMLImageElement[]>([]);
   const imgRef = useRef<HTMLImageElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [loadProgress, setLoadProgress] = useState(0);
   const totalFrames = 120;
-  const path = "/images/rotation/";
   const imagesCache = useRef<HTMLImageElement[]>([]);
+  // useEffect(() => {
+  //   const preloadImages = async () => {
+  //     const promises = [];
+  //     let loadedCount = 0;
 
+  //     for (let i = 1; i <= totalFrames; i++) {
+  //       const promise = new Promise<HTMLImageElement>((resolve, reject) => {
+  //         const preload = new Image();
+  //         preload.onload = () => {
+  //           loadedCount++;
+  //           setLoadProgress(Math.round((loadedCount / totalFrames) * 100));
+  //           resolve(preload);
+  //         };
+  //         preload.onerror = reject;
+  //         preload.src = `${path}${i}.jpg`;
+  //       });
+  //       promises.push(promise);
+  //     }
+
+  //     try {
+  //       imagesCache.current = await Promise.all(promises);
+  //       setIsLoading(false);
+  //     } catch (error) {
+  //       console.error("Failed to preload images:", error);
+  //       setIsLoading(false);
+  //     }
+  //   };
+
+  //   preloadImages();
+  // }, []);
   useEffect(() => {
     const preloadImages = async () => {
       const promises = [];
       let loadedCount = 0;
 
       for (let i = 1; i <= totalFrames; i++) {
-        const promise = new Promise<HTMLImageElement>((resolve, reject) => {
-          const preload = new Image();
-          preload.onload = () => {
-            loadedCount++;
-            setLoadProgress(Math.round((loadedCount / totalFrames) * 100));
-            resolve(preload);
-          };
-          preload.onerror = reject;
-          preload.src = `${path}${i}.jpg`;
-        });
+        const promise = (async () => {
+          // Dynamic import từ assets
+          const imgModule = await import(`../assets/images/rotation/${i}.jpg`);
+
+          return new Promise<HTMLImageElement>((resolve, reject) => {
+            const preload = new Image();
+            preload.onload = () => {
+              loadedCount++;
+              setLoadProgress(Math.round((loadedCount / totalFrames) * 100));
+              resolve(preload);
+            };
+            preload.onerror = reject;
+            preload.src = imgModule.default.src;
+          });
+        })();
+
         promises.push(promise);
       }
 
@@ -42,7 +82,6 @@ const PanoramaViewer = () => {
 
     preloadImages();
   }, []);
-
   useEffect(() => {
     const img = imgRef.current;
     if (!img || isLoading) return;
@@ -152,7 +191,7 @@ const PanoramaViewer = () => {
       ) : (
         <img
           ref={imgRef}
-          src="/images/rotation/1.jpg"
+          src={firstFrame.src}
           alt="Panorama"
           className="w-full h-full object-cover object-center select-none cursor-grab"
         />
