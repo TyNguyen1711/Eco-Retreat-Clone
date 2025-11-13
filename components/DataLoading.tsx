@@ -18,7 +18,7 @@ const DataLoading = ({ progress }: LoadingWithProgressProps) => {
       <div className="relative z-10 flex flex-col items-center gap-12">
         <Loading />
 
-        <div className="flex flex-col items-center gap-8 w-80 md:w-96 absolute -bottom-25">
+        <div className="flex flex-col items-center gap-4 w-80 md:w-[700px] absolute -bottom-34">
           <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden">
             <div
               className="h-full bg-linear-to-r from-lime-400 to-lime-500 transition-all duration-300 ease-out"

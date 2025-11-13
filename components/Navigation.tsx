@@ -101,14 +101,14 @@ const NavigationBar = ({
         <div className="flex items-center gap-2 flex-1">
           <button
             onClick={() => setIsOpen(true)}
-            className="flex items-center gap-2 px-2 sm:px-3 hover:opacity-80 transition-opacity shrink-0 cursor-pointer"
+            className="flex items-center px-1 sm:px-2 hover:opacity-80 transition-opacity shrink-0 cursor-pointer"
           >
             <Image
               src={Logo}
               alt="LOGO"
               width={160}
               height={50}
-              className="w-[60px] xs:w-[80px] sm:w-[100px] md:w-40 h-auto"
+              className="w-[70px] xs:w-[80px] sm:w-[100px] md:w-40 h-auto"
             />
           </button>
 
