@@ -92,7 +92,7 @@ const NavigationBar = ({
 
       <div
         style={{
-          transform: isVisible ? "translateY(0)" : "translateY(140%)",
+          transform: isVisible ? "translateY(0)" : "translateY(145%)",
           transition: "transform 300ms ease-in-out",
           pointerEvents: isVisible ? "auto" : "none",
         }}
