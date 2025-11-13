@@ -96,19 +96,19 @@ const NavigationBar = ({
           transition: "transform 300ms ease-in-out",
           pointerEvents: isVisible ? "auto" : "none",
         }}
-        className={`bg-primary backdrop-blur-sm rounded-2xl shadow-lg  md:pl-3 -translate-y-4 md:-translate-y-6`}
+        className={`bg-primary backdrop-blur-sm rounded-2xl shadow-lg md:pl-3 -translate-y-4 md:-translate-y-6`}
       >
         <div className="flex items-center gap-2 flex-1">
           <button
             onClick={() => setIsOpen(true)}
-            className="flex items-center px-1 sm:px-2 hover:opacity-80 transition-opacity shrink-0 cursor-pointer"
+            className="flex items-center sm:px-1 hover:opacity-80 transition-opacity shrink-0 cursor-pointer"
           >
             <Image
               src={Logo}
               alt="LOGO"
               width={160}
               height={50}
-              className="w-[70px] xs:w-[80px] sm:w-[100px] md:w-40 h-auto"
+              className="w-[75px] xs:w-[80px] sm:w-[100px] md:w-40 h-auto"
             />
           </button>
 
