@@ -1,6 +1,7 @@
 1. Các bước cài đặt để chạy project
 
 ```bash
+cd eco-retreat
 
 npm install
 
